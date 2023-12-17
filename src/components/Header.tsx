@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       </div>
 
       <div className="logo-container">
-        <img src="src/components/img/BellaNapoli-logo.png" alt="Logo da Pizzaria" />
+        <img src="src/img/BellaNapoli-logo.png" alt="Logo da Pizzaria" />
       </div>
 
       <div className="icons-container right">
