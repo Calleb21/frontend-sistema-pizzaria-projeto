@@ -5,7 +5,7 @@
   padding: 5px;
   background-image: url('https://imagepng.org/wp-content/uploads/2017/10/bandeira-italia-2.png'); 
   background-size: cover; 
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .logo-container img {
@@ -21,7 +21,7 @@
 .user-icon,
 .cart-icon {
   font-size: 2.0rem; 
-  color: rgb(255, 253, 253);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   margin: 15px;
 }
