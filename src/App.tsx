@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/HeandAndFooter/Header";
+import Footer from "./components/HeandAndFooter/Footer";
 import MainPage from "./components/Cardapio/MainPage";
 import "./App.css";
 

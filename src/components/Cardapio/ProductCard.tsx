@@ -13,7 +13,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="product-details">
         <div className="text-details">
           <h3>{product.nome}</h3>
-          <p>{product.descricao}</p>
+          <p>{product.ingredientes}</p>
         </div>
         <div className="price-and-button">
           <p>R$: {product.valor.toFixed(2)}</p>

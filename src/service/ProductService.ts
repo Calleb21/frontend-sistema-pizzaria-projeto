@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Product } from "../types/Product";
 
-const API_URL = "http://localhost:8080/produtos";
+const API_URL = "http://localhost:8080/api/pizzas/listar";
 
 const ProductService = {
   getAllProducts: async (): Promise<Product[]> => {

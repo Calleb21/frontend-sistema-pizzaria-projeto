@@ -8,7 +8,7 @@ const ProductList: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/produtos")
+      .get("http://localhost:8080/api/pizzas/listar")
       .then((response) => {
         console.log("Response from server:", response.data);
         setProducts(response.data);

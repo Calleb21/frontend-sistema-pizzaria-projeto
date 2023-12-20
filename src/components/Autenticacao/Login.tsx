@@ -11,6 +11,7 @@ const Login: React.FC = () => {
       const resposta = await autenticarUsuario(email, senha);
       setMensagem(resposta.mensagem);
     } catch (error) {
+      console.error(error);
       setMensagem("Erro ao autenticar");
     }
   };

@@ -12,6 +12,7 @@ const Cadastro: React.FC = () => {
       const resposta = await cadastrarUsuario(nome, email, senha);
       setMensagem(resposta.mensagem);
     } catch (error) {
+      console.error(error);
       setMensagem("Erro ao cadastrar");
     }
   };

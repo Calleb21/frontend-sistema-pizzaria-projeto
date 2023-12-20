@@ -5,7 +5,7 @@ import "./MainPage.css";
 const MainPage: React.FC = () => {
   return (
     <div className="main-page">
-      <h1>PIZZAS</h1>
+      <h1>CARDÁPIO</h1>
       <ProductList />
     </div>
   );

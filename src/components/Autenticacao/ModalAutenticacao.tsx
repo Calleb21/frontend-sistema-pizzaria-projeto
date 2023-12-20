@@ -12,7 +12,6 @@ interface ModalAuthenticationProps {
 const ModalAuthentication: React.FC<ModalAuthenticationProps> = ({
   onClose,
 }) => {
-  const [id, setId] = useState("");
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -39,17 +38,9 @@ const ModalAuthentication: React.FC<ModalAuthenticationProps> = ({
   return (
     <div className="modal">
       <button className="close-btn" onClick={onClose}>
-        X
+        x
       </button>
       <h2>Autenticação</h2>
-      <div>
-        <label>Id:</label>
-        <input
-          type="number"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-        />
-      </div>
       <div>
         <label>Nome:</label>
         <input
