@@ -15,4 +15,3 @@ export const adicionarProdutoAoCarrinho = async (produtoId: number, quantidade: 
     throw error;
   }
 };
-

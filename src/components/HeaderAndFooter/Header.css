@@ -1,0 +1,43 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-image: url('https://imagepng.org/wp-content/uploads/2017/10/bandeira-italia-2.png'); 
+  background-size: cover; 
+  color: rgb(0, 0, 0);
+  font-family: 'Sua Fonte Aqui', sans-serif;
+}
+
+.logo-container img {
+  width: 80px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.icons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.user-icon,
+.cart-icon {
+  font-size: 2.0rem; 
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin: 15px;
+}
+
+.user-icon {
+  font-size: 2.0rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin: 15px;
+  border-radius: 50%; 
+  width: 40px; 
+  height: 40px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

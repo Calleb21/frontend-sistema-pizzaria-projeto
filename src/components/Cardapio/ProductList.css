@@ -1,9 +1,16 @@
-.finalizar-pedido-button {  
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+
+
+.finalizar-button {
+  background-color: #4caf50; 
+  color: #fff;
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none;
+  cursor: pointer; 
+  border-radius: 5px; 
+  margin-top: 20px; 
+}
+
+.finalizar-button:hover {
+  background-color: #45a049; 
+}

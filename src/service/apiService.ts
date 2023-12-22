@@ -16,5 +16,3 @@ export const adicionarProdutoAoCarrinho = async (produto: Product) => {
     throw error;
   }
 };
-
-// Adicione outras funções do serviço, se necessário
