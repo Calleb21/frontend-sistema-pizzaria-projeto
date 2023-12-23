@@ -3,10 +3,8 @@ export interface ItemCarrinho {
   quantidade: number;
   pizza: {
     id: number;
-   
   };
   carrinho: {
     id: number;
-    
   };
 }

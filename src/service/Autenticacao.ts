@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Funcionario } from '../types/AuthTypes';
+import { Funcionario } from "../types/AuthTypes";
 
 const baseURL = "http://localhost:8080/api/funcionarios";
 

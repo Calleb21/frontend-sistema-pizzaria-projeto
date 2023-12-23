@@ -8,11 +8,11 @@ import { AuthProvider } from "./components/Autenticacao/AuthContext";
 
 function App() {
   return (
-    <AuthProvider> 
+    <AuthProvider>
       <React.Fragment>
         <Header />
         <MainPage />
-        <CheckoutComponent /> 
+        <CheckoutComponent />
         <Footer />
         <div className="card"></div>
       </React.Fragment>

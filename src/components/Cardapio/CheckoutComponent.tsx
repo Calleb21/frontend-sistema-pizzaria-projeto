@@ -5,7 +5,9 @@ interface CheckoutComponentProps {
   produtosAdicionados?: Product[];
 }
 
-const CheckoutComponent: React.FC<CheckoutComponentProps> = ({ produtosAdicionados = [] }) => {
+const CheckoutComponent: React.FC<CheckoutComponentProps> = ({
+  produtosAdicionados = [],
+}) => {
   return (
     <div>
       <div>

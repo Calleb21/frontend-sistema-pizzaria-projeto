@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Product } from "../../types/Product";
 import { adicionarProdutoAoCarrinho } from "../../service/CarrinhoService";
 import "./ProductCard.css";
@@ -8,16 +8,26 @@ interface ProductCardProps {
   adicionarProduto: (produto: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, adicionarProduto }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  adicionarProduto,
+}) => {
+  const [mensagem, setMensagem] = useState<string | null>(null);
+
   const handleAdicionarClick = async () => {
     try {
       await adicionarProdutoAoCarrinho(product.id, 1);
-      console.log("Produto adicionado ao carrinho com sucesso!");
+      setMensagem("Produto adicionado ao carrinho com sucesso!");
 
       adicionarProduto(product);
     } catch (error) {
       console.error("Erro ao adicionar produto ao carrinho", error);
+      setMensagem("Erro ao adicionar produto ao carrinho. Tente novamente.");
     }
+
+    setTimeout(() => {
+      setMensagem(null);
+    }, 900);
   };
 
   return (
@@ -31,6 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, adicionarProduto }) 
         <div className="price-and-button">
           <p>R$: {product.valor.toFixed(2)}</p>
           <button onClick={handleAdicionarClick}>Adicionar</button>
+          {mensagem && <div className="mensagem">{mensagem}</div>}
         </div>
       </div>
     </div>

@@ -1,19 +1,20 @@
-import React from 'react';
-import './CarrinhoHeader.css';
-import { ItemCarrinho } from '../../../types/ItemCarrinho';
+import React from "react";
+import "./CarrinhoHeader.css";
+import { ItemCarrinho } from "../../../types/ItemCarrinho";
 
 interface CarrinhoHeaderProps {
   carrinhoItens?: ItemCarrinho[];
-  modalWidth?: number; 
+  modalWidth?: number;
+  onClose: () => void; 
 }
 
-const CarrinhoHeader: React.FC<CarrinhoHeaderProps> = ({ carrinhoItens = [], modalWidth }) => {
-  const totalItens = carrinhoItens.reduce((total, item) => total + item.quantidade, 0);
-
+const CarrinhoHeader: React.FC<CarrinhoHeaderProps> = ({ modalWidth, onClose }) => {
   return (
     <div className="carrinho-header" style={{ width: modalWidth }}>
       <div className="carrinho-info">
-        <p>Total de Itens: {totalItens}</p>
+        <button className="close-btn" onClick={onClose}>
+          x
+        </button>
       </div>
     </div>
   );

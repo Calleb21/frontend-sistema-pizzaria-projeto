@@ -17,5 +17,3 @@ export interface Funcionario {
   email: string;
   senha: string;
 }
-
-  

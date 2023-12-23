@@ -1,12 +1,11 @@
-// ProductList.tsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import { Product } from "../../types/Product";
 import CheckoutComponent from "./CheckoutComponent";
-import CarrinhoModal from "../Carrinho/CarrinhoModal";  // Corrigir o caminho de importação
+import CarrinhoModal from "../Carrinho/CarrinhoModal";
 import { getUsuarioLogado } from "../../service/Autenticacao";
-import './ProductList.css';
+import "./ProductList.css";
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -27,13 +26,31 @@ const ProductList: React.FC = () => {
     setProdutosAdicionados((prevProdutos) => [...prevProdutos, produto]);
   };
 
+  const removerProduto = (produto: Product) => {
+    const indexToRemove = produtosAdicionados.findIndex(
+      (p) => p.id === produto.id 
+    );
+
+    if (indexToRemove !== -1) {
+      const updatedProdutosAdicionados = [...produtosAdicionados];
+      updatedProdutosAdicionados.splice(indexToRemove, 1);
+      setProdutosAdicionados(updatedProdutosAdicionados);
+    }
+  };
+
+  const abrirCarrinhoModal = () => {
+    setIsCarrinhoModalOpen(true);
+  };
+
   const finalizarCarrinho = async () => {
     console.log("Produtos Adicionados:", produtosAdicionados);
 
     const usuarioLogado = getUsuarioLogado();
 
     if (!usuarioLogado) {
-      console.error("Usuário não está logado. Não é possível finalizar o carrinho.");
+      console.error(
+        "Usuário não está logado. Não é possível finalizar o carrinho."
+      );
       return;
     }
 
@@ -52,14 +69,19 @@ const ProductList: React.FC = () => {
     console.log("JSON a ser enviado:", json);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/carrinhos/salvar", json);
+      const response = await axios.post(
+        "http://localhost:8080/api/carrinhos/salvar",
+        json
+      );
 
       console.log("Resposta do servidor:", response.data);
+
+      setProdutosAdicionados([]);
+
+      setIsCarrinhoModalOpen(false);
     } catch (error) {
       console.error("Erro ao enviar JSON para o backend:", error);
     }
-
-    setIsCarrinhoModalOpen(true);
   };
 
   return (
@@ -73,16 +95,17 @@ const ProductList: React.FC = () => {
       ))}
       <button
         className="finalizar-button"
-        onClick={() => finalizarCarrinho()}
+        onClick={abrirCarrinhoModal}
         disabled={produtosAdicionados.length === 0}
       >
-        Finalizar Pedido
+        CARRINHO
       </button>
       {isCarrinhoModalOpen && (
         <CarrinhoModal
           onClose={() => setIsCarrinhoModalOpen(false)}
           produtosAdicionados={produtosAdicionados}
-          onFinalizar={() => setIsCarrinhoModalOpen(false)}
+          onFinalizar={finalizarCarrinho}
+          onRemoverProduto={removerProduto}
         />
       )}
       <CheckoutComponent produtosAdicionados={produtosAdicionados} />

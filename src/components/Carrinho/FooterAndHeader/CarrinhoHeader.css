@@ -1,18 +1,13 @@
 .carrinho-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-image: url('https://imagepng.org/wp-content/uploads/2017/10/bandeira-italia-2.png');
-    background-size: cover;
-    background-position: center;
-    height: 100px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .logo {
-    width: 60px; 
-    height: auto;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url("https://imagepng.org/wp-content/uploads/2017/10/bandeira-italia-2.png");
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -3,10 +3,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  background-image: url('https://imagepng.org/wp-content/uploads/2017/10/bandeira-italia-2.png'); 
-  background-size: cover; 
+  background-image: url("https://imagepng.org/wp-content/uploads/2017/10/bandeira-italia-2.png");
+  background-size: cover;
   color: rgb(0, 0, 0);
-  font-family: 'Sua Fonte Aqui', sans-serif;
+  font-family: "Sua Fonte Aqui", sans-serif;
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
 }
 
 .logo-container img {
@@ -20,24 +27,16 @@
   gap: 10px;
 }
 
-.user-icon,
-.cart-icon {
-  font-size: 2.0rem; 
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  margin: 15px;
-}
-
 .user-icon {
-  font-size: 2.0rem;
+  font-size: 2rem;
   color: rgb(255, 255, 255);
   cursor: pointer;
-  margin: 15px;
-  border-radius: 50%; 
-  width: 40px; 
-  height: 40px; 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
 }
 
