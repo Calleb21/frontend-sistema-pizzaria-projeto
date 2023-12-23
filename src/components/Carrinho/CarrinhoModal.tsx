@@ -53,6 +53,21 @@ const CarrinhoModal: React.FC<CarrinhoModalProps> = ({
         )}
 
         <p>Preço Total: R${calcularPrecoTotal().toFixed(2)}</p>
+
+        <div className="opcoes-pagamento">
+          <label>
+            <input type="radio" name="pagamento" value="dinheiro" />
+            Dinheiro
+          </label>
+          <label>
+            <input type="radio" name="pagamento" value="cartao" />
+            Cartão
+          </label>
+          <label>
+            <input type="radio" name="pagamento" value="pix" />
+            Pix
+          </label>
+        </div>
       </div>
 
       <button onClick={onFinalizar}>Finalizar Pedido</button>

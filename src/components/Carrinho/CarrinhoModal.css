@@ -41,7 +41,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
-  border-bottom: 1px solid #000000; /* Adiciona a borda inferior */
+  border-bottom: 1px solid #000000; 
   padding-bottom: 15px;
 }
 
@@ -51,7 +51,7 @@ h2 {
 
 .remover-btn {
   margin-top: -20px;
-  background-color: #ff2600; /* Cor de botão de remover */
+  background-color: #ff2600; 
   color: #fff;
   padding: 4px 5px;
   font-size: 14px;
@@ -62,7 +62,7 @@ h2 {
 }
 
 .remover-btn:hover {
-  background-color: #d63431; /* Cor de botão de remover no hover */
+  background-color: #d63431; 
 }
 
 .linha {
@@ -83,4 +83,20 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.opcoes-pagamento {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.opcoes-pagamento label {
+  display: flex;
+  cursor: pointer;
+  margin-right: 1px;
+}
+
+.opcoes-pagamento label input {
+  margin-right: 10px;
 }

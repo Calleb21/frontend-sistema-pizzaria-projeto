@@ -57,6 +57,7 @@ const ProductList: React.FC = () => {
     const json = {
       funcionario: {
         id: usuarioLogado.id,
+        nome: usuarioLogado.nome,
       },
       itens: produtosAdicionados.map((produto) => ({
         quantidade: 1,
@@ -64,6 +65,7 @@ const ProductList: React.FC = () => {
           id: produto.id,
         },
       })),
+      
     };
 
     console.log("JSON a ser enviado:", json);

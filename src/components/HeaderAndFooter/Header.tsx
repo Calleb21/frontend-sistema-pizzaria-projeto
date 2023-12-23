@@ -41,7 +41,7 @@ const Header: React.FC = () => {
             style={{
               background: getRandomColor(),
               borderRadius: '50%',
-              padding: '8px',
+              padding: '10px',
               fontWeight: 'bold',
             }}
           >
