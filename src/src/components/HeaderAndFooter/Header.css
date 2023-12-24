@@ -1,0 +1,41 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-image: url("https://imagepng.org/wp-content/uploads/2017/10/bandeira-italia-2.png");
+  background-size: cover;
+  color: rgb(0, 0, 0);
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.logo-container img {
+  width: 80px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.icons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.user-icon {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+

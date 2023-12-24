@@ -1,0 +1,14 @@
+.finalizar-button {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: none;
+  text-transform: uppercase;
+  font-family: "Lobster", cursive;
+}
