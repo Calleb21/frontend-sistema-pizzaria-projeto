@@ -11,11 +11,8 @@ const CheckoutComponent: React.FC<CheckoutComponentProps> = ({
   return (
     <div>
       <div>
-        <h2>Produtos Adicionados</h2>
         {produtosAdicionados.map((produto, index) => (
-          <div key={`${produto.id}-${index}`}>
-            {produto.nome} - R$ {produto.valor.toFixed(2)}
-          </div>
+          <div key={`${produto.id}-${index}`}></div>
         ))}
       </div>
     </div>
