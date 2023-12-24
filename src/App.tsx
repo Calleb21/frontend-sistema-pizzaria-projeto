@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./components/HeaderAndFooter/Header";
 import Footer from "./components/HeaderAndFooter/Footer";
-import MainPage from "./components/Cardapio/MainPage";
-import CheckoutComponent from "./components/Cardapio/CheckoutComponent";
+import MainPage from "./components/Produtos/MainPage";
+import CheckoutComponent from "./components/Produtos/CheckoutComponent";
 import "./App.css";
 import { AuthProvider } from "./components/Autenticacao/AuthContext";
 
