@@ -11,6 +11,7 @@ const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [produtosAdicionados, setProdutosAdicionados] = useState<Product[]>([]);
   const [isCarrinhoModalOpen, setIsCarrinhoModalOpen] = useState(false);
+  const [opcaoPagamento, setOpcaoPagamento] = useState<string>("");
 
   useEffect(() => {
     axios
@@ -28,7 +29,7 @@ const ProductList: React.FC = () => {
 
   const removerProduto = (produto: Product) => {
     const indexToRemove = produtosAdicionados.findIndex(
-      (p) => p.id === produto.id 
+      (p) => p.id === produto.id
     );
 
     if (indexToRemove !== -1) {
@@ -54,6 +55,11 @@ const ProductList: React.FC = () => {
       return;
     }
 
+    if (!opcaoPagamento) {
+      console.error("Selecione uma opção de pagamento antes de finalizar.");
+      return;
+    }
+
     const json = {
       funcionario: {
         id: usuarioLogado.id,
@@ -65,7 +71,7 @@ const ProductList: React.FC = () => {
           id: produto.id,
         },
       })),
-      
+      formaPagamento: opcaoPagamento,
     };
 
     console.log("JSON a ser enviado:", json);
@@ -79,7 +85,6 @@ const ProductList: React.FC = () => {
       console.log("Resposta do servidor:", response.data);
 
       setProdutosAdicionados([]);
-
       setIsCarrinhoModalOpen(false);
     } catch (error) {
       console.error("Erro ao enviar JSON para o backend:", error);
@@ -108,6 +113,8 @@ const ProductList: React.FC = () => {
           produtosAdicionados={produtosAdicionados}
           onFinalizar={finalizarCarrinho}
           onRemoverProduto={removerProduto}
+          opcaoPagamento={opcaoPagamento}
+          setOpcaoPagamento={setOpcaoPagamento}
         />
       )}
       <CheckoutComponent produtosAdicionados={produtosAdicionados} />

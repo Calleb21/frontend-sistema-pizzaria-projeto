@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import CarrinhoHeader from "./FooterAndHeader/CarrinhoHeader";
 import "./CarrinhoModal.css";
 import { Product } from "../../types/Product";
@@ -10,11 +10,17 @@ interface CarrinhoModalProps {
   onRemoverProduto?: (produto: Product, quantidade: number) => void;
 }
 
-const CarrinhoModal: React.FC<CarrinhoModalProps> = ({
+interface CarrinhoModalExtendedProps extends CarrinhoModalProps {
+  opcaoPagamento: string;
+  setOpcaoPagamento: Dispatch<SetStateAction<string>>;
+}
+
+const CarrinhoModal: React.FC<CarrinhoModalExtendedProps> = ({
   onClose,
   produtosAdicionados,
   onFinalizar,
   onRemoverProduto,
+  setOpcaoPagamento,
 }) => {
   const calcularPrecoTotal = () => {
     return produtosAdicionados.reduce(
@@ -56,15 +62,30 @@ const CarrinhoModal: React.FC<CarrinhoModalProps> = ({
 
         <div className="opcoes-pagamento">
           <label>
-            <input type="radio" name="pagamento" value="dinheiro" />
+            <input
+              type="radio"
+              name="pagamento"
+              value="dinheiro"
+              onChange={() => setOpcaoPagamento("dinheiro")}
+            />
             Dinheiro
           </label>
           <label>
-            <input type="radio" name="pagamento" value="cartao" />
+            <input
+              type="radio"
+              name="pagamento"
+              value="cartao"
+              onChange={() => setOpcaoPagamento("cartao")}
+            />
             Cartão
           </label>
           <label>
-            <input type="radio" name="pagamento" value="pix" />
+            <input
+              type="radio"
+              name="pagamento"
+              value="pix"
+              onChange={() => setOpcaoPagamento("pix")}
+            />
             Pix
           </label>
         </div>

@@ -1,4 +1,4 @@
-import React, {} from "react";
+import React, { useState } from "react";
 import { FiUser } from "react-icons/fi";
 import ModalAuthentication from "../Autenticacao/ModalAutenticacao";
 import CarrinhoModal from "../Carrinho/CarrinhoModal";
@@ -6,21 +6,19 @@ import { getUsuarioLogado } from "../../service/Autenticacao";
 import "./Header.css";
 
 const Header: React.FC = () => {
-  const [isAutenticacaoModalVisible, setIsAutenticacaoModalVisible] = React.useState(false);
-  const [isCarrinhoModalVisible, setIsCarrinhoModalVisible] = React.useState(false);
+  const [isAutenticacaoModalVisible, setIsAutenticacaoModalVisible] =
+    useState(false);
+  const [isCarrinhoModalVisible, setIsCarrinhoModalVisible] = useState(false);
+  const [opcaoPagamento, setOpcaoPagamento] = useState<string>(""); 
   const usuarioLogado = getUsuarioLogado();
 
   const toggleAutenticacaoModal = () => {
     setIsAutenticacaoModalVisible((prev) => !prev);
   };
 
-  const toggleCarrinhoModal = () => {
-    setIsCarrinhoModalVisible((prev) => !prev);
-  };
-
   const getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
+    const letters = "0123456789ABCDEF";
+    let color = "#";
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
@@ -40,9 +38,9 @@ const Header: React.FC = () => {
             onClick={toggleAutenticacaoModal}
             style={{
               background: getRandomColor(),
-              borderRadius: '50%',
-              padding: '10px',
-              fontWeight: 'bold',
+              borderRadius: "50%",
+              padding: "10px",
+              fontWeight: "bold",
             }}
           >
             {usuarioLogado.nome.charAt(0)}
@@ -52,12 +50,16 @@ const Header: React.FC = () => {
         )}
       </div>
 
-      {isAutenticacaoModalVisible && <ModalAuthentication onClose={toggleAutenticacaoModal} />}
+      {isAutenticacaoModalVisible && (
+        <ModalAuthentication onClose={toggleAutenticacaoModal} />
+      )}
       {isCarrinhoModalVisible && (
         <CarrinhoModal
-          onClose={toggleCarrinhoModal}
+          onClose={() => setIsCarrinhoModalVisible(false)}
           produtosAdicionados={[]}
           onFinalizar={() => setIsCarrinhoModalVisible(false)}
+          opcaoPagamento={opcaoPagamento}
+          setOpcaoPagamento={setOpcaoPagamento}
         />
       )}
     </header>

@@ -5,10 +5,13 @@ import { ItemCarrinho } from "../../../types/ItemCarrinho";
 interface CarrinhoHeaderProps {
   carrinhoItens?: ItemCarrinho[];
   modalWidth?: number;
-  onClose: () => void; 
+  onClose: () => void;
 }
 
-const CarrinhoHeader: React.FC<CarrinhoHeaderProps> = ({ modalWidth, onClose }) => {
+const CarrinhoHeader: React.FC<CarrinhoHeaderProps> = ({
+  modalWidth,
+  onClose,
+}) => {
   return (
     <div className="carrinho-header" style={{ width: modalWidth }}>
       <div className="carrinho-info">

@@ -41,7 +41,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
-  border-bottom: 1px solid #000000; 
+  border-bottom: 1px solid #000000;
   padding-bottom: 15px;
 }
 
@@ -51,7 +51,7 @@ h2 {
 
 .remover-btn {
   margin-top: -20px;
-  background-color: #ff2600; 
+  background-color: #ff2600;
   color: #fff;
   padding: 4px 5px;
   font-size: 14px;
@@ -62,7 +62,7 @@ h2 {
 }
 
 .remover-btn:hover {
-  background-color: #d63431; 
+  background-color: #d63431;
 }
 
 .linha {
