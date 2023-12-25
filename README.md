@@ -4,7 +4,7 @@ Este é o frontend do projeto Pizzaria Bella Napoli, desenvolvido como parte do 
 
 ## Tecnologias Utilizadas
 
-- **React:** Biblioteca JavaScript para construção de interfaces de usuário.
+- **React com TypeScript:** Biblioteca para construção de interfaces de usuário.
 - **Axios:** Cliente HTTP para fazer requisições ao backend.
 
 ## Estrutura do Projeto
