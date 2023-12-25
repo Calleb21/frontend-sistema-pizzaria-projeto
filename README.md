@@ -43,7 +43,7 @@ Inicie o aplicativo localmente: `npm start`
 
 Sinta-se à vontade para contribuir! Abra problemas ou envie solicitações de pull.
 
-Para perguntas ou informações adicionais, entre em contato [Calleb Camargo] em [camargocalleb12@gmail.com].
+Para perguntas ou informações adicionais, entre em contato em [camargocalleb12@gmail.com].
 
 ## Agradecimentos
 
