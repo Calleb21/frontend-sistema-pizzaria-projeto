@@ -29,22 +29,28 @@ Para configurar e executar o backend, siga as instruções fornecidas no respect
 
 ## Execução
 
-Inicie o aplicativo localmente: `npm start`
+**O frontend estará acessível ao executar o comando:**
 
-**O frontend estará acessível em http://localhost:3000.**
+```
+npm run dev
+```
 
 ## Funcionalidades
 
 - Visualizar o cardápio da pizzaria.
 - Adicionar produtos ao carrinho de compras.
+- Remover produtos do carrinho de compras
+- Cadastrar um novo usuário
+- Logar com um usuário já existente
 - Finalizar pedidos e gerar uma nota fiscal.
+- Visualizar a zona de produção com etapas autamatizadas.
 
 ## Contribuição
 
-Sinta-se à vontade para contribuir! Abra problemas ou envie solicitações de pull.
+Sinta-se à vontade para contribuir!
 
 Para perguntas ou informações adicionais, entre em contato em [camargocalleb12@gmail.com].
 
-## Agradecimentos
+## Agradecimento
 
 Agradeço por contribuir e fazer parte do projeto! 🍕✨
